@@ -36,6 +36,8 @@ $flash_attn:="auto"
 $huggingface:=cs:C1710.event.huggingface.new($folder; $URL; $path)
 $huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface])
 
+$mmproj:=$folder.file("mmproj-model-f16.gguf")
+
 $options:={\
 ctx_size: $ctx_size; \
 temp: $temperature; \
@@ -46,6 +48,7 @@ log_disable: True:C214; \
 repeat_penalty: $repeat_penalty; \
 n_gpu_layers: $n_gpu_layers; \
 flash_attn: $flash_attn; \
+mmproj: $mmproj; \
 jinja: True:C214}
 
 $llama:=cs:C1710.llama.llama.new($port; $huggingfaces; $homeFolder; $options; $event)
