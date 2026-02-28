@@ -38,6 +38,9 @@ $flash_attn:="auto"
 
 $huggingface:=cs:C1710.event.huggingface.new($folder; $URL; $path)
 $huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface])
+$imageParser:=cs:C1710.event.huggingface.new($folder; $URL; "mmproj-model-f16.gguf")
+
+$huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface; $imageParser])
 
 $mmproj:=$folder.file("mmproj-model-f16.gguf")
 
