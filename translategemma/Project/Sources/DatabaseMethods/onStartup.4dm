@@ -38,9 +38,6 @@ $flash_attn:="auto"
 
 $huggingface:=cs:C1710.event.huggingface.new($folder; $URL; $path)
 $huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface])
-$imageParser:=cs:C1710.event.huggingface.new($folder; $URL; "mmproj-model-f16.gguf")
-
-$huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface; $imageParser])
 
 $mmproj:=$folder.file("mmproj-model-f16.gguf")
 
@@ -52,7 +49,7 @@ top_p: $top_p; \
 min_p: $min_p; \
 log_disable: True:C214; \
 repeat_penalty: $repeat_penalty; \
-n_gpu_layers: $n_gpu_layers; \
+fit: "on"; \
 flash_attn: $flash_attn; \
 mmproj: $mmproj; \
 jinja: True:C214}
