@@ -70,4 +70,4 @@ $URL:="keisuke-miyako/translategemma-4b-it-onnx-int4"
 $huggingface:=cs:C1710.event.huggingface.new($folder; $URL; $path; "chat.completion"; "model.onnx")
 $huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface])
 
-$ONNX:=cs:C1710.ONNX.ONNX.new($port; $huggingfaces; $homeFolder; $options; $event)
+//$ONNX:=cs.ONNX.ONNX.new($port; $huggingfaces; $homeFolder; $options; $event)
